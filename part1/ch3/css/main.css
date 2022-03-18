@@ -1,0 +1,109 @@
+/* @import url("/part1/ch3/css/box.css"); */
+div{
+    /* width: 500px;
+    height: 500px;
+    background: url("../images/logo.png"); */
+
+    /* width: 200px;
+    height: 100px;
+    background-color: orange; */
+
+    /* font-size: 20px; */
+}
+
+.box{
+    width: 500px;
+    height: 100px;
+    background-color: red;
+    /* transition: 1s; */
+}
+
+.box::before{
+    content: " cute ";
+}
+
+.box::after{
+    content: "test";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: royalblue;
+}
+
+.box:focus{
+    background-color: orange;
+}
+
+/* .box:hover { */
+/* .box:active {
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+} */
+
+input:focus {
+    background-color: orange;
+}
+
+[type] {
+    background-color: royalblue;
+}
+
+[type="text"] {
+    background-color: orange;
+}
+
+[type="password"] {
+    background-color: red;
+}
+
+[data-fruit-name]{
+    color: sienna;
+}
+
+[data-fruit-name="apple"]{
+    color: sienna;
+}
+
+.parent {
+    width: 300px;
+    height: 400px;
+    background-color: red;
+}
+
+.child{
+    width: 100px;
+    height: inherit;
+    background-color: inherit;
+    position: fixed;
+    top: 100px;
+    left: 500px;
+}
+
+div :hover{
+    background-color: royalblue;
+}
+
+div{
+    font-size: 70px;
+}
+
+/* #hello{
+    color: blue;
+} */
+
+.hello{
+    color: red;
+}
+
+.hello{
+    color: blue;
+}
+
+div.hello{
+    color: green;
+}
+
+.hello{
+    color: rgb(255, 0, 212) !important;
+}

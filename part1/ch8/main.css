@@ -1,0 +1,315 @@
+/* 박스모델 너비 예제 */
+/* width와 height의 기본값은 auto ! */
+/* div{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+span{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+} */
+
+
+/* 박스모델 너비 max,min 예제 */
+/* .parent{
+    width: 300px;
+    height: 200px;
+    background-color: royalblue;
+}
+.child{
+    width: 100px;
+    max-width: 300px;
+    min-width: 400px;
+    height: 100px;
+    background-color: orange;
+} */
+
+
+/* 박스모델 단위 예제 */
+/* html{
+    font-size: 16px;
+}
+.parent{
+    width: 300px;
+    height: 200px;
+    background-color: royalblue;
+    font-size: 30px;
+}
+.child{
+    width: 50%;
+    width: 10em;
+    width: 10rem;
+    width: 50vw;
+    height: 100%;
+    height: 50vh;
+    background-color: orange;
+} */
+
+
+/* 박스모델 margin 예제 */
+/* .container {
+
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: -20px 10px;
+    border: 4px solid red;
+} */
+
+
+/* 박스모델 padding 예제 */
+/* .container {
+
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border: 4px solid red;
+}
+.container .item:first-child {
+    padding: 20px;
+} */
+
+/* 박스모델 border 예제 */
+/* .container {
+
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+.container .item:first-child {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    border: 10px dashed red;
+    border-radius: 50px 10px;
+} */
+
+/* 박스모델 overflow 예제 */
+/* .parent{
+    width: 200px;
+    height: 150px;
+    background-color: royalblue;
+    margin: 20px;
+    overflow: auto;
+}
+.child{
+    width: 300px;
+    height: 100px;
+    background-color: orange;
+} */
+
+/* 박스모델 display 예제 */
+/* body{
+    margin: 20px;
+}
+span{
+    width: 120px;
+    height: 30px;
+    background-color: royalblue;
+    color: white;
+    display: block;
+} */
+
+/* 박스모델 opacity (투명도) 예제 */
+/* .parent{
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+    background-color: royalblue;
+}
+.child{
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    opacity: .5;
+} */
+
+/* 글꼴 예제 */
+/* h1{
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: serif;
+}
+p{
+    width: 350px;
+    padding: 10px;
+    border: 1px solid;
+    box-sizing: border-box;
+    line-height:2;
+} */
+
+/* 문자 예제 */
+/* a{
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    display: block;
+    font-size: 22px;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
+}
+p{
+    font-size: 24px;
+    text-indent: 50px;
+} */
+
+/* 배경 예제 */
+/* body{
+    height: 3000px;
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    background-image: url("https://heropy.blog/css/images/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+} */
+
+/* 배치 예시 */
+/* body{
+    height: 3000px;
+}
+.wrap{
+    width: 400px;
+    height: 300px;
+    background-color: tomato;
+    position:relative;
+}
+.container{
+    width: 300px;
+    background-color: royalblue;
+    position:relative;
+}
+.container .item{
+    width: 100px;
+    height: 100px;
+    border: 4px dashed red;
+    background-color: orange;
+}
+.container .item:nth-child(1){
+    width: 100px;
+    height: 100px;
+}
+.container .item:nth-child(2){
+    width: 140px;
+    height: 70px;
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+}
+.container .item:nth-child(3){
+    width: 70px;
+    height: 120px;
+} */
+
+/* 배치 z-index 예시 1*/
+/* .container{
+    width: 300px;
+    background-color: royalblue;
+    position:relative;
+}
+.container .item{
+    width: 100px;
+    height: 100px;
+    border: 4px dashed red;
+    background-color: orange;
+}
+.container .item:nth-child(1){
+    position: relative;
+    z-index: 1;
+}
+.container .item:nth-child(2){
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.container .item:nth-child(3){
+    position: fixed;
+    z-index: 2;
+} */
+
+/* 배치 z-index 예시 2 */
+/* span{
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    font-size: 40px;
+} */
+
+/* 플렉스 예시 */
+/* .container{
+    width: 500px;
+    height: 300px;
+    background-color: royalblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.container .item{
+    width: 100px;
+    height: 100px;
+    border: 4px dashed red;
+    background-color: orange;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.container .item:nth-child(3){
+    flex-grow: 2;
+} */
+
+
+/* 전환 예시 */
+/* div{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition:1s 3s;
+}
+div:active{
+    width: 300px;
+    background-color: purple;
+} */
+
+/* 변환 예시 */
+body{
+    padding: 100px;
+}
+.container {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    perspective: 250px;
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    /* transform: perspective(150px) rotateX(45deg) translateX(100px); */
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+
+}
