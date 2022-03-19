@@ -1,3 +1,6 @@
-./part3/*/.cache
-./part3/*/dist
-./part3/*/node_modules
+./part3/ch1/.cache
+./part3/ch1/dist
+./part3/ch1/node_modules
+./part3/ch2/.cache
+./part3/ch2/dist
+./part3/ch2/node_modules
