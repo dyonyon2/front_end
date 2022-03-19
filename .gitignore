@@ -1,4 +1,6 @@
-/part3/*/.cache/
-/part3/*/dist/
-/part3/*/node_modules/
-/part3/test.txt
+/*/.cache/
+/*/dist/
+/*/node_modules/
+/*/*/.cache/
+/*/*/dist/
+/*/*/node_modules/
