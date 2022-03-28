@@ -1,0 +1,296 @@
+$color: royalblue;
+
+// .container{
+//     h1{
+//         color: $color;
+//     }
+// }
+
+
+// 중첩 예제
+// .container {
+//     >ul{
+//         li{
+//             font-size: 40px;
+//             .name{
+//                 color:royalblue;
+//             }
+//             .age{
+//                 color:orange;
+//             }
+//         }
+//     }
+// }
+
+
+// // 상위(부모) 선택자 참조 예제 1
+// .btn{
+//     position: absolute;
+//     &.active{
+//         color: red;
+//     }
+// }
+
+// .list{
+//     li{
+//         &:last-child{
+//             margin-right: 0;
+//         }
+//     }
+// }
+
+// // 상위(부모) 선택자 참조 예제 2
+// .fs{
+//     &-small { font-size: 12px ;}
+//     &-medium { font-size: 14px ;}
+//     &-large { font-size: 16px ;}
+// }
+
+// // 중첩된 속성
+// .box {
+//     font: {
+//         weight: bold;
+//         size: 10px;
+//         family: sans-
+//     };
+//     margin: {
+//         top:10px;
+//         left:20px;
+//     };
+//     padding: {
+//         top:10px;
+//         bottom: 40px;
+//         left: 20px;
+//         right: 30px
+//     };
+// }
+
+// 변수(Variables)
+// .container{
+//     $size: 200px;
+//     position: fixed;
+//     top: 100px;
+//     .item{
+//         $size: 100px;
+//         width: $size;
+//         height: $size;
+//         transform: translateX($size);
+//     }
+//     left: $size;
+// }
+
+// .box{
+//     width: $size;   // Error occur!!!
+// }
+
+
+
+// 산술연산
+// div{
+//     $size: 30px;
+//     width: 20px + 20px;
+//     height: 40px - 10px;
+//     font-size: 10px * 2;
+//     // margin: 30px / 2;      //생각과 다른 값 나옴!!, 단축속성으로 인식!!
+//     margin: (30px / 2);
+//     margin: $size / 2;
+//     margin: 10px + 12px / 2;
+//     padding: 20px % 7
+// }
+
+// span{
+//     // font-size: 10px;
+//     // font-family: serif;
+//     // line-height: 10px;
+//     font: 10px / 10px serif;
+// }
+
+
+
+// 재활용
+// @mixin center {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 200px;
+//     height: 200px;
+//     background-color: tomato
+// }
+
+// .container{
+//     @include center;
+//     .item{
+//         @include center;
+//         width: 100px;
+//         height: 100px;
+//         background-color: royalblue
+//     }
+// }
+
+// .box{
+//     @include center;
+// }
+
+// // 인수
+// @mixin center($size: 100px , $color: tomato) {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: $size;
+//     height: $size;
+//     background-color: $color
+// }
+
+// .container{
+//     @include center(200px, red);
+//     .item{
+//         @include center($color:royalblue);
+//     }
+// }
+
+// .box{
+//     @include center();
+// }
+
+
+
+// // 반복문
+// @for $i from 1 through 10{
+//     .box:nth-child(#{$i}) {
+//         width: 100px * $i;
+//     }
+// }
+
+
+
+
+// // 함수
+// @mixin center {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// @function ratio($size,$ratio){
+//     @return $size * $ratio
+// }
+
+// .box{
+//     $width: 100px;
+//     width: $width;
+//     height: ratio($width, 1/2 );
+//     @include center
+// }
+
+
+
+// 색상 내장 함수
+// .box{
+//     $color:royalblue;
+//     width:200px;
+//     height: 100px;
+//     margin: 20px;
+//     border-radius: 10px;
+//     background-color: $color;
+//     &.built-in {
+//         background-color: mix($color,red);
+//         background-color: lighten($color,10%);
+//         background-color: darken($color,10%);
+//         background-color: saturate($color,40%);
+//         background-color: desaturate($color,90%);
+//         background-color: grayscale($color);
+//         background-color: invert($color);
+//         background-color: rgba($color,.5);
+//     }
+// }
+
+
+
+// // 가져오기
+// @import "./sub", "./sub2";
+
+// $color:royalblue;
+
+// .container{
+//     h1{
+//         color:$color;
+//     }
+// }
+
+
+
+// // 데이터 종류
+// $number: 1;
+// $string: bold;
+// $color: red;
+// $boolean: true;
+// $null: null;
+// $list: orange, royalblue, yellow;
+// $map: (
+//     o:orange,
+//     r:royalblue,
+//     y:yellow
+// );
+// .box{
+//     width: 100px;
+//     color: red;
+//     position: null;
+// }
+
+
+
+
+
+// 반복문
+// $number: 1;
+// $string: bold;
+// $color: red;
+// $boolean: true;
+// $null: null;
+// $list: orange, royalblue, yellow;
+// $map: (
+//     o:orange,
+//     r:royalblue,
+//     y:yellow
+// );
+
+// @each $c in $list {
+//     .box{
+//         color:$c
+//     }
+// }
+
+// @each $key, $value in $map {
+//     .box-#{$key}{
+//         color:$value
+//     }
+// }
+
+
+
+
+
+// 재활용 @content
+@mixin  left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @content;
+}
+
+.container{
+    width: 100px;
+    height: 100px;
+    @include left-top
+}
+
+.box{
+    width: 200px;
+    height: 300px;
+    @include left-top{
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
