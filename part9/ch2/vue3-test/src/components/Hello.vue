@@ -2,7 +2,7 @@
     <h1>
         Hello~
     </h1>
-    <h1 ref="good">
+    <!-- <h1 ref="good">
         Good~~~~
-    </h1>
+    </h1> -->
 </template>
