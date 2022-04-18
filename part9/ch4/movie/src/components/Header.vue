@@ -111,7 +111,14 @@ export default {
                 background-color: darken($gray-200, 10%);
             }
             img{
-                width: 100%;
+                width: 80%;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
             }   
         }
         @include media-breakpoint-down(sm) {
