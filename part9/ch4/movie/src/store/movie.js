@@ -1,9 +1,12 @@
 import axios from 'axios'
 import _uniqBy from 'lodash/uniqBy'
 
+const defaultMessage = 'Search for the movie title'
+
 export default {
     // module
     namespaced: true,
+
     // data
     // state: function(){
     //     return {
@@ -12,15 +15,18 @@ export default {
     // },
     state: () => ({
         movies: [],
-        message: 'Search for the movie',
-        loading: false
+        message: defaultMessage,
+        loading: false,
+        theMovie: {}
     }),
+
     // computed
     getters: {
         // movieIds(state) {
         //     return state.movies.map(m=>m.imdbID)
         // }
     },
+
     // methods
     // 변이 (mutations에서만 데이터의 변경이 가능!)
     mutations: {
@@ -36,6 +42,8 @@ export default {
         },
         resetMovies(state){
             state.movies = []
+            state.message = defaultMessage
+            state.loading = false
         }
     },
     // 비동기 동작
@@ -51,7 +59,7 @@ export default {
             if(state.loading){
                 return 
             }
-            
+
             commit('updateState', {
                 message: '',
                 loading: true
@@ -102,6 +110,31 @@ export default {
                    loading: false 
                 })
             }
+        },
+        async searchMovieWithId({state,commit},payload){
+            if(state.loading){
+                return
+            }
+                
+            commit('updateState', {
+                theMovie: {},
+                loading: true
+            })
+
+            try{
+                const res = await _fetchMovie(payload)
+                commit('updateState', {
+                    theMovie: res.data
+                })
+            }catch(err){
+                commit('updateState',{
+                    theMovie: {}
+                })
+            }finally{
+                commit('updateState',{
+                    loading:false
+                })
+            }
         }
     }
 
@@ -109,9 +142,11 @@ export default {
 
 
 function _fetchMovie(payload) {
-    const {title, type, year, page} = payload
+    const {title, type, year, page, id} = payload
     const OMDB_API_KEY = "7035c60c"
-    const url = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
+    const url = id 
+        ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
+        :`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
     
     return new Promise((resolve,reject)=>{
         axios.get(url)
