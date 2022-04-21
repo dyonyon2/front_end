@@ -7,3 +7,15 @@
 
 /*/*/*/cypress/videos/
 /*/.env
+
+
+
+**/*/.cache/
+**/*/dist/
+**/*/node_modules/
+**/*/.cache/
+**/*/dist/
+**/*/node_modules/
+
+**/*/cypress/videos/
+**/*/.env
