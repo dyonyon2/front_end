@@ -70,7 +70,7 @@ describe("Button 컴포넌트 (@testing-library/react", () => {
 
         // expect(buttonElement.disabled).toBeFalsy();
 
-        // jest-dom
+        // jest-dom //
         expect(buttonElement.disabled).not.toBeDisabled();
     });
 });
