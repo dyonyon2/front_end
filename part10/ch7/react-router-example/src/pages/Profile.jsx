@@ -1,10 +1,10 @@
+import { useParams } from "react-router-dom";
+
 /* //Router이해하기
 export default function Profile(props) {
   return <div>Profile 페이지입니다.</div>;
 }
 */
-
-import { useParams } from "react-router-dom";
 
 /*// Dynamic routing
 export default function Profile(props) {

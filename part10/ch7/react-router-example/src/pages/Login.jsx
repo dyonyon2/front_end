@@ -1,5 +1,5 @@
-/*//js rounting (props 계속 전달 방법)
 import LoginButton from "../components/LoginButton";
+/*//js rounting (props 계속 전달 방법)
 
 export default function Login(props) {
   return (
@@ -12,8 +12,6 @@ export default function Login(props) {
 */
 
 //js rounting (HOC withRouter 사용)
-import LoginButton from "../components/LoginButton";
-
 export default function Login() {
     return (
         <div>
