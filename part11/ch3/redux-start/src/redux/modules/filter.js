@@ -35,9 +35,13 @@ export default function reducer(previousState = initialState, action) {
 import { createAction, createActions, handleActions } from "redux-actions";
 
 console.log(createAction("HELLO")("안녕하세요"));
-const { showAll, showComplete } = createActions("SHOW_ALL", "SHOW_COMPLETE", {
-    prefix: "redux-start/filter",
-});
+export const { showAll, showComplete } = createActions(
+    "SHOW_ALL",
+    "SHOW_COMPLETE",
+    {
+        prefix: "redux-start/filter",
+    }
+);
 
 //초기값
 const initialState = "ALL";
