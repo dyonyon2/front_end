@@ -74,6 +74,7 @@ function* loginSaga(action: Action<LoginReqType>) {
     }
 }
 function* logoutSaga() {
+    console.log("in logout saga");
     try {
         yield put(pending());
         const token: string = yield select((state) => state.auth.token);
