@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { autorun, makeObservable, observable } from "mobx";
+import { Provider } from "mobx-react";
+import PersonContext from "./contexts/PersonContext";
+import PersonStore from "./stores/PersonStore";
+import RootStore from "./stores/RootStore";
 
 /*// mobx
 const isLogin = observable(true);
@@ -33,7 +37,7 @@ person.age = 25;
 personStore.age = 30;
 */
 
-//mobx-react
+/*//mobx-react
 
 class PersonStore {
     @observable
@@ -43,17 +47,38 @@ class PersonStore {
     constructor() {
         makeObservable(this);
     }
+    plus() {
+        this.age++;
+    }
 }
 export const personStore = new PersonStore();
 
-setInterval(() => {
-    personStore.age++;
-}, 1000);
+// setInterval(() => {
+//     personStore.age++;
+// }, 1000);
+*/
+
+// const personStore = new PersonStore();
+const rootStore = new RootStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+    // <React.StrictMode>
+    //     <PersonContext.Provider value={personStore}>
+    //         <App />
+    //     </PersonContext.Provider>
+    // </React.StrictMode>
+
+    // <React.StrictMode>
+    //     <Provider personStore={personStore}>
+    //         <App />
+    //     </Provider>
+    // </React.StrictMode>
+
     <React.StrictMode>
-        <App />
+        <Provider {...rootStore}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );
 
