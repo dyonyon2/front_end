@@ -1,0 +1,16 @@
+{
+  "imports": {
+    "/index.html": {
+      "entry": [
+        "/dist/main.js"
+      ],
+      "css": [],
+      "js": [
+        "/_snowpack/pkg/svelte/internal.js",
+        "/dist/App.svelte.js",
+        "/dist/main.js"
+      ]
+    }
+  },
+  "generated": {}
+}
