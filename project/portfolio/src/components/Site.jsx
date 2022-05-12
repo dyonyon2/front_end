@@ -2,7 +2,7 @@ import styles from "./Site.module.scss";
 
 export default function Site() {
     function goSite0() {
-        window.open("https://stoic-heisenberg-96d04f.netlify.app", "_blank");
+        window.open("https://fancy-baklava-cd360e.netlify.app", "_blank");
     }
     function goSite1() {
         window.open("https://stoic-heisenberg-96d04f.netlify.app", "_blank");
@@ -28,6 +28,7 @@ export default function Site() {
     function goSite6() {
         window.open("https://snazzy-pavlova-9729e1.netlify.app", "_blank");
     }
+    //
 
     return (
         <div className={styles.mainContainer}>
