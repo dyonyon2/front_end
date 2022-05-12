@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap");
+
+$scrollY: 0;
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 100vh;
+    // background-color: red;
+    .displaynone {
+        display: none;
+    }
+    .fixedcontainer {
+        // background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        height: auto;
+        // background-color: green;
+
+        .name {
+            color: #018d94;
+            font-size: 200px;
+            font-family: "Koulen", cursive;
+            // font-weight: 700;
+            // font-family: 'Permanent Marker', cursive;
+            position: relative;
+            text-align: left;
+            // height: 130px;
+            // position: fixed;
+            left: $scrollY;
+            line-height: 150px;
+            margin-top: 150px;
+            // &:hover {
+            //     transform: translateX(40vw);
+            //     -webkit-text-stroke: 7px #018d94;
+            //     color: white;
+            // }
+            transition: 0.3s linear;
+        }
+
+        .frontend {
+            font-size: 200px;
+            font-family: "Koulen", cursive;
+            color: #018d94;
+            text-align: right;
+            position: relative;
+            height: 130px;
+            // top: 150px;
+            line-height: 150px;
+            margin-top: 50px;
+            right: $scrollY;
+            // position: fixed;
+            // &:hover {
+            //     transform: translateX(-40vw);
+            //     -webkit-text-stroke: 7px #018d94;
+            //     color: white;
+            // }
+            transition: 0.3s linear;
+        }
+
+        .nameout {
+            // transform: translateX(100vw);
+            -webkit-text-stroke: 5px #018d94;
+            color: white;
+        }
+
+        .frontendout {
+            // transform: translateX(-100vw);
+            -webkit-text-stroke: 5px #018d94;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@function multiple-box-shadow($n) {
+    $value: "#{random(3000)}px #{random(20000)}px #FFF";
+    @for $i from 2 through $n {
+        $value: "#{$value} , #{random(3000)}px #{random(2000)}px #FFF";
+    }
+
+    @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+@keyframes anime {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-2000px);
+    }
+}
+
+.background {
+    position: fixed;
+}
+
+.stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: anime 50s linear infinite;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: $shadows-small;
+    }
+
+    &.disActive {
+        display: none;
+    }
+}
+
+.stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    animation: anime 100s linear infinite;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: $shadows-medium;
+    }
+
+    &.disActive {
+        display: none;
+    }
+}
+
+.stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+    animation: anime 150s linear infinite;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: $shadows-big;
+    }
+
+    &.disActive {
+        display: none;
+    }
+}

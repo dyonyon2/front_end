@@ -1,6 +1,6 @@
 // JS 데이터
 
-const { FORMERR } = require("dns")
+const { FORMERR } = require("dns");
 
 // String: "", '', ``
 // Number
@@ -45,10 +45,6 @@ const { FORMERR } = require("dns")
 // console.log(str6)
 // console.log(str6.trim())
 
-
-
-
-
 // // 숫자와 수학
 // // toFixed 메소드 (숫자 데이터의 소수점 첫번째 인수까지 받아 문자 데이터로 반환 )
 // const pi = 3.14159265358979
@@ -84,9 +80,6 @@ const { FORMERR } = require("dns")
 // function radom() {
 //     return Math.floor(Math.random()*10)
 // }
-
-
-
 
 // 배열
 // index(인덱스), element or item (요소)
@@ -154,20 +147,19 @@ const { FORMERR } = require("dns")
 // })
 // console.log(b)
 
-
 // .find 메소드 (배열 데이터들을 돌면서 판별 함수(정규 표현식)를 만족하는 첫 번째 요소의 값을 반환)
 // .findIndex 메소드 (find로 찾은 데이터의 인덱스를 반환한다.)
 // const numbers = [1,2,3,4]
 // const fruits = ['Apple','Banana', 'Cherry']
 
 // // const a = fruits.find(fruit => /^B/.test(fruit))
-// const a = fruits.find(fruit => { 
+// const a = fruits.find(fruit => {
 //     return /^B/.test(fruit)
 // })
 // console.log(a)
 
 // // const b = fruits.findIndex(fruit => /^B/.test(fruit))
-// const b = fruits.findIndex(fruit => { 
+// const b = fruits.findIndex(fruit => {
 //     return /^B/.test(fruit)
 // })
 // console.log(b)
@@ -214,8 +206,6 @@ const { FORMERR } = require("dns")
 
 // fruits.splice(2,1,'Orange')
 // console.log(fruits)
-
-
 
 // 객체
 // Object.assign 메소드 (첫번째 인수를 타겟 객체, 두번째 인수를 참조 객체로 보고 타겟 객체들의 속성들을 복사하여 타겟 객체에 붙여넣은 뒤 타겟 객체를 반환한다.)
@@ -277,7 +267,6 @@ const { FORMERR } = require("dns")
 // const [,b1] = fruits
 // console.log(b1)
 
-
 // 전개 연산자 (Spread) (배열 데이터를 쉼표로 구분하는 아이템으로 전개해서 출력한다.)
 // 배열 데이터를 쉼표로 구분하여 전개하는 방식, 매개변수에서 나머지 매개변수로 사용
 // const fruits = ['Apple', 'Banana', 'Cherry','Orange']
@@ -299,37 +288,34 @@ const { FORMERR } = require("dns")
 // console.log(toObject(...fruits))
 // // console.log(toObject(fruits[0],fruits[1],fruits[2]))
 
-
-
 // 데이터 불변성 (Immutability)
 // 원시 데이터 : String, Number, Boolean, undefined, null
 // 참조형 데이터 : Object, Array, Function
-// let a = 1
-// let b = 4
-// console.log(a, b, a === b)
-// b = a
-// console.log(a, b, a === b)
-// a = 7
-// console.log(a, b, a === b)
-// let c = 1
-// console.log(b, c, b === c)
+// let a = 1;
+// let b = 4;
+// console.log(a, b, a === b);
+// b = a;
+// console.log(a, b, a === b);
+// a = 7;
+// console.log(a, b, a === b);
+// let c = 1;
+// console.log(b, c, b === c);
 // 원시 데이터는 기존 메모리에 있다면 새롭게 만드는 것이 아니라 기존 메모리 주소를 바라보게 한다.
 
-// 참조형 데이터는 불변하지 않기 때문에, 선언할 때마다 새로운 메모리 주소에 참조형 데이터가 할당된다. 
+// 참조형 데이터는 불변하지 않기 때문에, 선언할 때마다 새로운 메모리 주소에 참조형 데이터가 할당된다.
 // 생김새가 똑같더라도 같은 데이터가 아닐 수 있다. 그래서 한쪽을 수정하면 다른쪽도 수정되는 상황이 생긴다.
-// let a = { k: 1}
-// let b = { k: 1}
-// console.log(a, b, a === b)
-// a.k = 7
-// b = a
-// console.log(a, b, a === b)
-// a.k = 2
-// console.log(a, b, a === b)
-// let c = b
-// console.log(a, b, c, a === c)
-// a.k = 9
-// console.log(a,b,c, a === c)
-
+// let a = { k: 1 };
+// let b = { k: 1 };
+// console.log(a, b, a === b);
+// a.k = 7;
+// b = a;
+// console.log(a, b, a === b);
+// a.k = 2;
+// console.log(a, b, a === b);
+// let c = b;
+// console.log(a, b, c, a === c);
+// a.k = 9;
+// console.log(a, b, c, a === c);
 
 // 얕은 복사 (Shallow copy), 깊은 복사 (Deep copy)
 // const user = {
@@ -371,7 +357,6 @@ const { FORMERR } = require("dns")
 // console.log('user', user)
 // console.log('copyUser', copyUser)
 
-
 // 전개 연산자 사용
 // const user = {
 //     name: "dyonyon",
@@ -394,29 +379,26 @@ const { FORMERR } = require("dns")
 // console.log('user', user)
 // console.log('copyUser', copyUser)
 
-
-
-// 깊은 복사
-import _ from 'lodash'
+// // 깊은 복사
+import _ from "lodash";
 
 const user = {
     name: "dyonyon",
-    age : 26,
-    emails: ["jychoi9712@naver.com"]
-}
+    age: 26,
+    emails: ["jychoi9712@naver.com"],
+};
 
-const copyUser = _.cloneDeep(user)
-console.log(copyUser === user)
+const copyUser = _.cloneDeep(user);
+console.log(copyUser === user);
 
-user.age = 22
-console.log('user', user)
-console.log('copyUser', copyUser)
+user.age = 22;
+console.log("user", user);
+console.log("copyUser", copyUser);
 
-console.log('---------')
-console.log('---------')
+console.log("---------");
+console.log("---------");
 
-user.emails.push("jychoi9712@gmail.com")
-console.log(user.emails === copyUser.emails)
-console.log('user', user)
-console.log('copyUser', copyUser)
-
+user.emails.push("jychoi9712@gmail.com");
+console.log(user.emails === copyUser.emails);
+console.log("user", user);
+console.log("copyUser", copyUser);

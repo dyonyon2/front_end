@@ -1,0 +1,26 @@
+{
+    "name": "my-blog2",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build && next export",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@ant-design/icons": "^4.7.0",
+        "@sanity/block-content-to-react": "^3.0.0",
+        "@sanity/client": "^3.3.0",
+        "antd": "^4.20.1",
+        "dayjs": "^1.11.1",
+        "next": "12.1.5",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "react-syntax-highlighter": "^15.5.0"
+    },
+    "devDependencies": {
+        "eslint": "8.14.0",
+        "eslint-config-next": "12.1.5"
+    }
+}

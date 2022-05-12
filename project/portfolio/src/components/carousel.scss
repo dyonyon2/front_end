@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.slideItem {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 80px;
+    color: #00adb5;
+    line-height: 1;
+    z-index: 0;
+}
+
+.slideLine {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    width: 0%;
+    height: 5px;
+    background-image: linear-gradient(90deg, #00adb5, #1b2735);
+    transition: width 2s 0.5s;
+    // background-size: 10%;
+}
+
+.carousel-item-start {
+    display: none;
+}
+.carousel-item-next {
+    display: none;
+}
+
+.active .slideLine {
+    display: block;
+    width: 100%;
+}
+
+.carousel {
+    padding-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+    width: 70%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}

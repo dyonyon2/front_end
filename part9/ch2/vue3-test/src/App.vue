@@ -159,8 +159,6 @@ export default {
 </style>
 -->
 
-
-
 <!-- Computed -->
 <!--
 <template>
@@ -260,38 +258,40 @@ export default {
 <!-- Watch -->
 <!--
 <template>
-  <h1 @click="changeMessage">{{msg}}</h1>
-  <h1>{{reversedMessage}}</h1>
+    <div>
+        <h1 @click="changeMessage">{{ msg }}</h1>
+        <h1>{{ reversedMessage }}</h1>
+    </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      msg:'Hello?'
-    }
-  },
-  computed: {
-    reversedMessage() {
-      return this.msg.split('').reverse().join('')
-    }
-  },
-  watch: {
-    msg(newValue) {
-      console.log('msg:', this.msg)
-      console.log('msg:', newValue)
+    data() {
+        return {
+            msg: "Hello?",
+        };
     },
-    reversedMessage(test) {
-      console.log('reversedMessage:', this.reversedMessage)
-      console.log('reversedMessage:', test)
-    }
-  },
-  methods: {
-    changeMessage(){
-      this.msg ='Good!'
-    }
-  }
-}
+    computed: {
+        reversedMessage() {
+            return this.msg.split("").reverse().join("");
+        },
+    },
+    watch: {
+        msg(newValue) {
+            console.log("msg:", this.msg);
+            console.log("msg:", newValue);
+        },
+        reversedMessage(test) {
+            console.log("reversedMessage:", this.reversedMessage);
+            console.log("reversedMessage:", test);
+        },
+    },
+    methods: {
+        changeMessage() {
+            this.msg = "Good!";
+        },
+    },
+};
 </script>
 -->
 
@@ -441,7 +441,6 @@ export default {
 }
 </script>
 -->
-
 
 <!--
 <template>
@@ -611,7 +610,6 @@ export default {
 }
 </script>
 -->
-
 
 <!-- 이벤트 수식어 -->
 <!--
@@ -953,22 +951,21 @@ export default {
 }
 </script>
 -->
-
 <!--
 <template>
-  <h1>{{msg}}</h1>
-  <input type="text" v-bind:value="msg" />
-  <input type="text" :value="msg" @input="msg = $event.target.value" />
+    <h1>{{ msg }}</h1>
+    <input type="text" v-bind:value="msg" />
+    <input type="text" :value="msg" @input="msg = $event.target.value" />
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-      msg: 'Hello world!'
-    }
-  }
-}
+    data() {
+        return {
+            msg: "Hello world!",
+        };
+    },
+};
 </script>
 -->
 
@@ -1074,8 +1071,6 @@ export default {
 </script>
 -->
 
-
-
 <!-- 컴포넌트 -->
 
 <!--
@@ -1149,8 +1144,6 @@ export default {
 </script>
 -->
 
-
-
 <!-- Emit -->
 <!--
 <template>
@@ -1177,7 +1170,6 @@ export default {
 }
 </script>
 -->
-
 
 <!-- Slot -->
 <!--
@@ -1240,7 +1232,6 @@ export default {
 }
 </script>
 -->
-
 
 <!-- 컴포넌트 - Provide, Inject -->
 <!--
@@ -1343,7 +1334,6 @@ export default {
 </script>
 -->
 
-
 <!-- Refs -->
 <!--
 <template>
@@ -1368,6 +1358,7 @@ export default {
 </script>
 -->
 
+<!--
 <template>
   <Hello ref="hello" />
 </template>
@@ -1389,3 +1380,4 @@ export default {
   }
 }
 </script>
+-->

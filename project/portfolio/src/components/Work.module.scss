@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.mainContainer {
+    font-family: "Roboto", sans-serif;
+    z-index: 99;
+    margin-top: 150px;
+    width: 100%;
+    height: 1300px;
+    // background-color: white;
+    display: flex;
+    align-content: space-around;
+
+    min-width: 1500px;
+    max-width: 3000px;
+
+    .frontend {
+        // background-color: yellow;
+        height: 45%;
+        width: 40%;
+        margin-top: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-right: 5px solid rgba($color: #b30000, $alpha: 0.6);
+        justify-content: right;
+        position: relative;
+        transform: rotateY(-90deg);
+        transition: 1s;
+
+        &.active {
+            transform: rotateY(0);
+        }
+
+        .header {
+            position: absolute;
+            right: 0;
+            margin-right: 0;
+            background: rgba($color: #b30000, $alpha: 0.6);
+            line-height: 50px;
+            width: 220px;
+            text-align: right;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            text-shadow: 3px 3px 0 white;
+        }
+        .contents {
+            width: 80%;
+            height: 80%;
+            // background-color: black;
+            margin-top: 10%;
+            margin-left: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .content {
+                text-align: right;
+                // background-color: white;
+                .title {
+                    color: rgb(52, 103, 81);
+                    margin-right: 10px;
+                    font-weight: 700;
+                    font-size: 30px;
+                }
+                .date {
+                    color: #363636;
+                }
+                .text {
+                }
+            }
+        }
+    }
+
+    .previousWork {
+        // background-color: green;
+        position: relative;
+        height: 60%;
+        width: 40%;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-left: 5px solid rgba($color: #b30000, $alpha: 0.6);
+        transform: rotateY(-90deg);
+        transition: 1s;
+
+        &.active {
+            transform: rotateY(0);
+        }
+
+        .header {
+            position: absolute;
+            left: 0;
+            background: rgba($color: #b30000, $alpha: 0.6);
+            line-height: 50px;
+            width: 350px;
+            text-align: left;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            text-shadow: 3px 3px 0 white;
+        }
+        .contents {
+            width: 80%;
+            height: 80%;
+            // background-color: black;
+            margin-top: 10%;
+            margin-left: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .content {
+                text-align: left;
+                // background-color: white;
+                .title {
+                    color: rgb(52, 103, 81);
+                    margin-right: 10px;
+                    font-weight: 700;
+                    font-size: 30px;
+                }
+                .date {
+                    color: #363636;
+                }
+                .text {
+                }
+            }
+        }
+    }
+}
