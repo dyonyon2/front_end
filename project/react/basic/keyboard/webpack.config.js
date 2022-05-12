@@ -37,7 +37,6 @@ module.exports = {
             },
         ],
     },
-
     optimization: {
         minimizer: [new TerserWebpackPlugin(), new CssMinimizerPlugin()],
     },

@@ -24,7 +24,7 @@ export const { pending, success, fail } = createActions(
     { prefix }
 );
 
-// const navigate = useNavigate();
+// const navigate = useNavigate();    a
 
 const reducer = handleActions<AuthState, string>(
     {

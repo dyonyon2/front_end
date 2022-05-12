@@ -11,3 +11,4 @@ const reducer = (history: History<unknown>) =>
     });
 
 export default reducer;
+//
