@@ -25,7 +25,7 @@ export default function Compotency() {
                     <div className={styles.headerItem}>Next.js</div>
                     <div className={styles.headerItem}>Svelte</div>
                     <div className={styles.headerItem}>Typescript</div>
-                    <div className={styles.headerItem}>GrapgQL</div>
+                    <div className={styles.headerItem}>GraphQL</div>
                     <div className={styles.headerItem}>SCSS</div>
                     <div className={styles.headerItem}>Styled</div>
                     <div className={styles.headerItem}>Git</div>
