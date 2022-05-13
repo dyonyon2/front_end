@@ -14,7 +14,10 @@ export default function Profile() {
         window.open("https://github.com/jychoi9712/front_end", "_blank");
     }
     function goNotion() {
-        window.open("https://notion.so/dyonyon", "_blank");
+        window.open(
+            "https://www.notion.so/dyonyon/f8fb4014e8754b0ebae45e46f745d23b?v=13fc858cb7914c6fb0c2d470bdd0aa6d",
+            "_blank"
+        );
     }
     function goDrive() {
         window.open(
