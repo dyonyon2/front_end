@@ -15,7 +15,7 @@ export default function Profile() {
     }
     function goNotion() {
         window.open(
-            "https://www.notion.so/dyonyon/f8fb4014e8754b0ebae45e46f745d23b?v=13fc858cb7914c6fb0c2d470bdd0aa6d",
+            "https://dyonyon.notion.site/f8fb4014e8754b0ebae45e46f745d23b?v=13fc858cb7914c6fb0c2d470bdd0aa6d",
             "_blank"
         );
     }
