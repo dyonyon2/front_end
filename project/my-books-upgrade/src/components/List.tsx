@@ -13,6 +13,7 @@ interface ListProps {
     getBooks: () => void;
     logout: () => void;
     deleteBook: (bookId: number) => void;
+    editBook: (bookId: number) => void;
 }
 
 const List: React.FC<ListProps> = ({
@@ -22,6 +23,7 @@ const List: React.FC<ListProps> = ({
     error,
     logout,
     deleteBook,
+    editBook,
 }) => {
     useEffect(() => {
         getBooks();
@@ -77,7 +79,11 @@ const List: React.FC<ListProps> = ({
                         dataIndex: "book",
                         key: "book",
                         render: (text, record) => (
-                            <Book {...record} deleteBook={deleteBook} />
+                            <Book
+                                {...record}
+                                deleteBook={deleteBook}
+                                editBook={editBook}
+                            />
                         ),
                     },
                 ]}

@@ -24,11 +24,20 @@ export interface BookType {
     bookId: number;
     title: string;
     author: string;
+    message: string;
     createdAt: string;
     url: string;
 }
 
 export interface BookReqType {
+    title: string;
+    message: string;
+    author: string;
+    url: string;
+}
+
+export interface payloadType {
+    id_book: number;
     title: string;
     message: string;
     author: string;

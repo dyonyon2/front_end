@@ -1,27 +1,36 @@
+import { ForkOutlined } from "@ant-design/icons";
+import { Button, Input, PageHeader, message as messageDialog } from "antd";
+import TextArea from "antd/lib/input/TextArea";
+import Layout from "./Layout";
+import styles from "./Add.module.css";
+import { useRef } from "react";
+import TextAreaType from "rc-textarea";
+import { BookReqType, payloadType } from "../types";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { Button, Input, PageHeader, message as messageDialog } from "antd";
-import { useRef } from "react";
-import TextArea from "antd/lib/input/TextArea";
-import TextAreaType from "rc-textarea";
 import { BookType } from "../types";
-import { ForkOutlined } from "@ant-design/icons";
-import Layout from "./Layout";
-import styles from "./Detail.module.css";
-import { useNavigate } from "react-router-dom";
 
-interface DetailProps {
+interface EditProps {
+    loading: boolean;
     books: BookType[] | null;
     getBooks: () => void;
     back: () => void;
     logout: () => void;
+    edit: (payload: payloadType) => void;
 }
 
-const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
+const Edit: React.FC<EditProps> = ({
+    loading,
+    books,
+    getBooks,
+    back,
+    logout,
+    edit,
+}) => {
     useEffect(() => {
         getBooks();
     }, [getBooks]);
-    const navigate = useNavigate();
 
     const { id } = useParams();
     console.log(id);
@@ -56,10 +65,10 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                 onBack={back}
                 title={
                     <div>
-                        <ForkOutlined /> Detail Book
+                        <ForkOutlined /> Edit Book
                     </div>
                 }
-                subTitle="Your Book"
+                subTitle="Edit Your Book"
                 extra={[
                     <Button
                         key="1"
@@ -71,6 +80,7 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                     </Button>,
                 ]}
             />
+
             <div className={styles.add}>
                 <div className={styles.input_title}>
                     Title
@@ -81,8 +91,7 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                         placeholder="Title"
                         className={styles.input}
                         ref={titleRef}
-                        disabled
-                        value={selectedBook.title}
+                        defaultValue={selectedBook.title}
                     />
                 </div>
                 <div className={styles.input_comment}>
@@ -95,8 +104,7 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                         placeholder="Comment"
                         className={styles.input}
                         ref={messageRef}
-                        disabled
-                        value={selectedBook.message}
+                        defaultValue={selectedBook.message}
                     />
                 </div>
                 <div className={styles.input_author}>
@@ -108,8 +116,7 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                         placeholder="Author"
                         className={styles.input}
                         ref={authorRef}
-                        disabled
-                        value={selectedBook.author}
+                        defaultValue={selectedBook.author}
                     />
                 </div>
                 <div className={styles.input_url}>
@@ -121,22 +128,57 @@ const Detail: React.FC<DetailProps> = ({ books, getBooks, back, logout }) => {
                         placeholder="URL"
                         className={styles.input}
                         ref={urlRef}
-                        disabled
-                        value={selectedBook.url}
+                        defaultValue={selectedBook.url}
                     />
                 </div>
                 <div className={styles.button_area}>
                     <Button
                         size="large"
+                        loading={loading}
+                        onClick={click}
                         className={styles.button}
-                        onClick={back}
                     >
-                        Back
+                        Edit
                     </Button>
                 </div>
             </div>
         </Layout>
     );
+
+    function click() {
+        const title = titleRef.current!.input.value;
+        const message = messageRef.current!.resizableTextArea.props
+            .value as string;
+        const author = authorRef.current!.input.value;
+        const url = urlRef.current!.input.value;
+
+        console.log(
+            "in components/add.tsx click()",
+            title,
+            message,
+            author,
+            url
+        );
+
+        if (
+            title === "" ||
+            message === undefined ||
+            message === "" ||
+            author === "" ||
+            url === "" ||
+            id === ""
+        ) {
+            console.log("error!!!");
+            messageDialog.error("please fill out all inputs");
+            return;
+        }
+
+        if (id != undefined) {
+            const id_book = parseInt(id);
+            edit({ id_book, title, message, author, url });
+            return;
+        }
+    }
 };
 
-export default Detail;
+export default Edit;

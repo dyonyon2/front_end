@@ -18,7 +18,7 @@ const AddContainer = () => {
     const dispatch = useDispatch();
 
     const back = useCallback(() => {
-        dispatch(goBack());
+        return navigate("/");
     }, [dispatch]);
 
     const logout = useCallback(() => {

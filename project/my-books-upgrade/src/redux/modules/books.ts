@@ -1,7 +1,7 @@
 import { createActions, handleActions, Action } from "redux-actions";
 import { put, select, takeLatest, call, takeEvery } from "redux-saga/effects";
 import BookService from "../../servics/BookService";
-import { BookReqType, BooksState, BookType } from "../../types";
+import { BookReqType, BooksState, BookType, payloadType } from "../../types";
 import { push } from "connected-react-router";
 import { useNavigate } from "react-router-dom";
 
@@ -44,14 +44,26 @@ export default reducer;
 
 // saga
 
-export const { getBooks, addBook, deleteBook } = createActions(
-    "GET_BOOKS",
-    "ADD_BOOK",
-    "DELETE_BOOK",
-    {
-        prefix,
+export const { getBooks, addBook, deleteBook, editBook, goBack } =
+    createActions(
+        "GET_BOOKS",
+        "ADD_BOOK",
+        "DELETE_BOOK",
+        "EDIT_BOOK",
+        "GO_BACK",
+        {
+            prefix,
+        }
+    );
+
+function* goBackSaga() {
+    try {
+    } catch (error: any) {
+        yield put(
+            fail(new Error(error?.response?.data?.error || "UNKNOWN_ERROR"))
+        );
     }
-);
+}
 
 function* getBooksSaga() {
     try {
@@ -87,6 +99,28 @@ function* addBookSaga(action: Action<BookReqType>) {
     }
 }
 
+function* editBookSaga(action: Action<payloadType>) {
+    console.log("in redux/modules/books editBookSaga() ", action.payload);
+    try {
+        const bookId = action.payload.id_book;
+        const bookReq = {
+            title: action.payload.title,
+            message: action.payload.message,
+            author: action.payload.author,
+            url: action.payload.url,
+        };
+        yield put(pending());
+        const token: string = yield select((state) => state.auth.token);
+        yield call(BookService.editBook, token, bookId, bookReq);
+        const books: BookType[] = yield call(BookService.getBooks, token);
+        yield put(success(books));
+    } catch (error: any) {
+        yield put(
+            fail(new Error(error?.response?.data?.error || "UNKNOWN_ERROR"))
+        );
+    }
+}
+
 function* deleteBookSaga(action: Action<number>) {
     try {
         const bookId = action.payload;
@@ -106,4 +140,6 @@ export function* booksSaga() {
     yield takeLatest(`${prefix}/GET_BOOKS`, getBooksSaga);
     yield takeEvery(`${prefix}/ADD_BOOK`, addBookSaga);
     yield takeEvery(`${prefix}/DELETE_BOOK`, deleteBookSaga);
+    yield takeEvery(`${prefix}/EDIT_BOOK`, editBookSaga);
+    yield takeEvery(`${prefix}/GO_BACK`, goBackSaga);
 }

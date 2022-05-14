@@ -30,7 +30,7 @@ export default class BookService {
         bookId: number,
         book: BookReqType
     ): Promise<BookType> {
-        const res = await axios.put(`${BOOK_API_URL}/${bookId}`, book, {
+        const res = await axios.patch(`${BOOK_API_URL}/${bookId}`, book, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

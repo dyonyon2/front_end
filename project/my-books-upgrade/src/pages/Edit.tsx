@@ -1,9 +1,13 @@
-import React from "react";
+import EditContainer from "../containers/EditContainer";
+import useToken from "../hooks/useToken";
+import { Navigate } from "react-router-dom";
 
 export default function Edit() {
-    return (
-        <div>
-            <h1>Edit!</h1>
-        </div>
-    );
+    const token = useToken();
+
+    if (token === null) {
+        return <Navigate to="/signin" />;
+    }
+
+    return <EditContainer />;
 }

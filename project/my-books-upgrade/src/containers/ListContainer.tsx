@@ -8,8 +8,11 @@ import {
 } from "../redux/modules/books";
 import { logout as logoutSagaStart } from "../redux/modules/auth";
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ListContainer() {
+    const navigate = useNavigate();
+
     const books = useSelector<RootState, BookType[] | null>(
         (state) => state.books.books
     );
@@ -39,6 +42,13 @@ export default function ListContainer() {
         [dispatch]
     );
 
+    const editBook = useCallback(
+        (bookId: number) => {
+            return navigate("/edit/" + bookId);
+        },
+        [dispatch]
+    );
+
     // const goAdd = useCallback(() => {
     //     dispatch(Navigate("/add"));
     // }, [dispatch]);
@@ -51,6 +61,7 @@ export default function ListContainer() {
             error={error}
             logout={logout}
             deleteBook={deleteBook}
+            editBook={editBook}
         />
     );
 }

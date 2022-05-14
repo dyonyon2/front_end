@@ -3,8 +3,12 @@ import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BookType, RootState } from "../types";
 import { getBooks as getBooksSagaStart } from "../redux/modules/books";
+import { goBack } from "connected-react-router";
+import { logout as logoutSagaStart } from "../redux/modules/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function DetailContianer() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const books = useSelector<RootState, BookType[] | null>(
@@ -13,11 +17,22 @@ export default function DetailContianer() {
     const getBooks = useCallback(() => {
         dispatch(getBooksSagaStart());
     }, [dispatch]);
-    // console.log(props);
+    const back = useCallback(() => {
+        return navigate("/");
+    }, [dispatch]);
+
+    const logout = useCallback(() => {
+        dispatch(logoutSagaStart());
+    }, [dispatch]);
+
     return (
         <div>
-            여기는 detail container입니다. 전달받은 객체는 입니다.
-            <Detail books={books} getBooks={getBooks} />
+            <Detail
+                books={books}
+                getBooks={getBooks}
+                back={back}
+                logout={logout}
+            />
         </div>
     );
 }
