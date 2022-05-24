@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 .mainContainer {
@@ -5,19 +6,19 @@
     z-index: 99;
     margin-top: 150px;
     width: 100%;
-    height: 1300px;
-    // background-color: white;
+    height: 1500px;
+    // background-color: red;/
     display: flex;
     align-content: space-around;
 
     min-width: 1500px;
-    max-width: 3000px;
+    // max-width: 3000px;
 
     .frontend {
         // background-color: yellow;
-        height: 45%;
+        height: 700px;
         width: 40%;
-        margin-top: 40%;
+        margin-top: 700px;
         margin-left: 5%;
         margin-right: 5%;
         border-right: 5px solid rgba($color: #b30000, $alpha: 0.6);
